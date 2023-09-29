@@ -1,0 +1,40 @@
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+swiper-container {
+  height: 100%;
+  width: 100%;
+}
+
+swiper-slide {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.over {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 90%;
+  z-index: 2000;
+
+  font-weight: 700;
+  font-size: large;
+  // -ms-transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
+}
+
+@media (min-width: 745px) {
+  swiper-container {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+<app-properties-filter></app-properties-filter>
+<app-wrapper>
+  <app-card *ngFor="let property of allProperties" component>
+    <app-carousel [images]="property.images" carousel></app-carousel>
+    <div class="card-content" cardcontent>
+      <h3>ABUJA,NIGERIA</h3>
+      <div class="flex">
+        <h5>Single room self contain</h5>
+        <div class="flex-small">
+          <span>4.4</span>
+          <img src="../../assets/images/star.png" />
+        </div>
+      </div>
+      <div class="flex">
+        <h6>N1,200,000</h6>
+        <div class="per-year-holder">PER/YR</div>
+      </div>
+    </div>
+  </app-card>
+</app-wrapper>

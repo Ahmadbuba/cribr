@@ -1,0 +1,15 @@
+<div class="navigations">
+  <a
+    routerLinkActive="active"
+    class="n-btn"
+    routerLink="/"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Off-Campus
+  </a>
+  <a class="n-btn" routerLink="/properties" routerLinkActive="active"
+    >Properties</a
+  >
+  <a class="btn" routerLink="/auctions" routerLinkActive="active">Auctions</a>
+  <i class="fa-solid fa-magnifying-glass icon" (click)="onHideNavigation()"></i>
+</div>

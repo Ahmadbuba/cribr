@@ -1,0 +1,2 @@
+<app-navigation *ngIf="!showSearch" (show)="onShowSearch()"></app-navigation>
+<app-search *ngIf="showSearch" (show)="onShowNavigation()"></app-search>

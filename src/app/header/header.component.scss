@@ -1,0 +1,57 @@
+@import "/src/variables";
+
+.header {
+  width: 95%;
+  z-index: 100;
+  @include center(0);
+  @include flexRowJustify(space-between);
+}
+
+.right-navigation {
+  @include flexRowJustify(space-between);
+}
+
+.btn-two {
+  @include flexRowJustify(space-between);
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  text-align: inherit;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 21px;
+  transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.left-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn {
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  text-align: inherit;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 21px;
+  transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (max-width: 745px) {
+  .header {
+    @include flexRowJustify(center);
+  }
+
+  .header img {
+    display: none;
+  }
+
+  .left-btns {
+    display: none;
+  }
+}
