@@ -26,12 +26,12 @@ import { PropertyDetailComponent } from './properties/property-detail/property-d
 import { PropertyImageWrapperComponent } from './shared/UI/property-image-wrapper/property-image-wrapper.component';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
-import { DetailImageGridComponent } from './shared/UI/detail-image-grid/detail-image-grid.component';
+import { DetailImageGridComponent } from './shared/UI/details/detail-image-grid/detail-image-grid.component';
 import { HomeComponent } from './home/home.component';
+import { DetailImageSlideComponent } from './shared/UI/details/detail-image-slide/detail-image-slide.component';
+import { SwiperDirective } from './directives/swiper-directive';
 
-// register Swiper custom elements
 register();
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +55,9 @@ register();
     PropertyDetailComponent,
     PropertyImageWrapperComponent,
     DetailImageGridComponent,
+    DetailImageSlideComponent,
     HomeComponent,
+    SwiperDirective,
   ],
   imports: [BrowserModule, RouterModule, HttpClientModule, AppRoutingModule],
   providers: [],

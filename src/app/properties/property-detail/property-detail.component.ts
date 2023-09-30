@@ -8,6 +8,7 @@ import { PropertiesService } from '../properties.service';
   styleUrls: ['./property-detail.component.scss'],
 })
 export class PropertyDetailComponent {
+  config: {};
   allProperties: Property[];
 
   constructor(private propertyService: PropertiesService) {}
@@ -18,22 +19,5 @@ export class PropertyDetailComponent {
       console.log(this.allProperties);
       console.log(this.allProperties[0].images);
     });
-
-    const swiperParams = {
-      slidesPerView: 1,
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-      on: {
-        init() {
-          // ...
-        },
-      },
-    };
   }
 }
