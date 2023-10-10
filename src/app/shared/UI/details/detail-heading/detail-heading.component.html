@@ -1,0 +1,27 @@
+<div class="main">
+  <ng-content select="[h1-1]"></ng-content>
+  <ng-content select="[h1-2]"></ng-content>
+  <!-- <div class="features">
+    <ng-content select="[guest]"></ng-content> <span> .</span>
+    <span>.</span>
+    <ng-content select="[bedroom]"></ng-content>
+    <span>.</span>
+    <ng-content select="[bed]"></ng-content>
+    <span>.</span>
+    <ng-content select="[bath]"></ng-content>
+  </div> -->
+  <div class="features">
+    <ol>
+      <ng-content select="[a1]"></ng-content>
+      <ng-content select="[a2]"></ng-content>
+      <ng-content select="[a3]"></ng-content>
+      <ng-content select="[a4]"></ng-content>
+    </ol>
+  </div>
+  <div class="flex">
+    <span class="material-symbols-outlined"> star </span>
+    <ng-content select="[rating]"></ng-content>
+    <span>.</span>
+    <a href="">176 reviews</a>
+  </div>
+</div>

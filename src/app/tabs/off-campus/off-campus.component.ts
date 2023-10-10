@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OffCampusService } from './off-campus.service';
-import { Property } from '../shared/models/property.model';
+import { Property } from '../../shared/models/property.model';
 
 @Component({
   selector: 'app-off-campus',

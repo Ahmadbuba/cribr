@@ -1,7 +1,23 @@
 <div class="grid">
-  <div class="main"></div>
-  <div class="sub-main">
-    <div></div>
-    <div></div>
+  <div class="image-container">
+    <img
+      style="padding: 0; margin: 0"
+      class="image"
+      [src]="images[0].image"
+      alt=""
+      height="100"
+    />
+  </div>
+
+  <div class="sub-grid">
+    <div class="image-container" *ngFor="let subImage of subImages">
+      <img
+        style="padding: 0; margin: 0"
+        class="image"
+        [src]="subImage.image"
+        alt=""
+        height="100"
+      />
+    </div>
   </div>
 </div>

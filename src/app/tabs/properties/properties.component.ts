@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Property } from '../shared/models/property.model';
+import { Property } from '../../shared/models/property.model';
 import { PropertiesService } from './properties.service';
 
 @Component({

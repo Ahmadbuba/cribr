@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PropertyImage } from '../../../models/propertyImage.model';
 import { SwiperOptions } from 'swiper/types';
 
@@ -7,7 +7,7 @@ import { SwiperOptions } from 'swiper/types';
   templateUrl: './detail-image-slide.component.html',
   styleUrls: ['./detail-image-slide.component.scss'],
 })
-export class DetailImageSlideComponent {
+export class DetailImageSlideComponent implements OnInit {
   @Input() images: PropertyImage[];
   @Input() total: number;
 
@@ -33,4 +33,8 @@ export class DetailImageSlideComponent {
       init() {},
     },
   };
+
+  ngOnInit() {
+    console.log(this.images.length);
+  }
 }

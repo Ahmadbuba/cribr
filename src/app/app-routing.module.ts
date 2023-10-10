@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OffCampusComponent } from './off-campus/off-campus.component';
-import { AuctionsComponent } from './auctions/auctions.component';
-import { PropertiesComponent } from './properties/properties.component';
-import { HomeComponent } from './home/home.component';
-import { PropertyDetailComponent } from './properties/property-detail/property-detail.component';
+import { OffCampusComponent } from './tabs/off-campus/off-campus.component';
+import { AuctionsComponent } from './tabs/auctions/auctions.component';
+import { PropertiesComponent } from './tabs/properties/properties.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PropertyDetailComponent } from './tabs/properties/property-detail/property-detail.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
     ],
   },
   { path: 'property-detail', component: PropertyDetailComponent },
+  { path: 'test', component: TestComponent },
 ];
 
 @NgModule({
