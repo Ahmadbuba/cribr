@@ -33,6 +33,9 @@ import { SwiperDirective } from './directives/swiper-directive';
 import { HeadingComponent } from './shared/UI/details/detail-heading/detail-heading.component';
 import { TestComponent } from './test/test.component';
 import { DetailDescription1Component } from './shared/UI/details/detail-description1/detail-description1.component';
+import { PropertyUploadComponent } from './pages/property/property-upload/property-upload.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 register();
 @NgModule({
@@ -64,8 +67,16 @@ register();
     HeadingComponent,
     TestComponent,
     DetailDescription1Component,
+    PropertyUploadComponent,
+    FooterComponent,
   ],
-  imports: [BrowserModule, RouterModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
