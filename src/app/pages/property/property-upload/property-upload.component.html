@@ -9,6 +9,7 @@
     enctype="multipart/form-data"
     target="_blank"
     (ngSubmit)="onSubmit()"
+    class="form"
   >
     <!-- <span class="loader"></span> -->
     <div class="form-group">
@@ -32,15 +33,16 @@
       />
     </div>
     <div class="form-group">
-      <label for="address">Address</label>
+      <label for="bedroom_size">Bedroom Size</label>
       <input
-        type="text"
-        id="address"
-        placeholder="Address of property"
-        formControlName="address"
+        type="number"
+        id="bedroom_size"
+        placeholder="Enter bedroom size in square meters"
+        formControlName="bedroom_size_sqm"
         class="form-control"
       />
     </div>
+
     <div class="form-group">
       <label for="rooms">Rooms</label>
       <input
@@ -51,16 +53,18 @@
         class="form-control"
       />
     </div>
+
     <div class="form-group">
-      <label for="bedroom_size">Bedroom Size</label>
+      <label for="address">Address</label>
       <input
-        type="number"
-        id="bedroom_size"
-        placeholder="Enter bedroom size in square meters"
-        formControlName="bedroom_size_sqm"
+        type="text"
+        id="address"
+        placeholder="Address of property"
+        formControlName="address"
         class="form-control"
       />
     </div>
+
     <div class="form-group">
       <label for="title">Title</label>
       <input
@@ -71,56 +75,7 @@
         class="form-control"
       />
     </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input
-        type="text"
-        id="description"
-        placeholder="Description of property"
-        formControlName="description"
-        class="form-control"
-      />
-    </div>
-    <div class="form-group">
-      <label for="price">Price(N)</label>
-      <input
-        type="number"
-        id="price"
-        placeholder="Price"
-        formControlName="price"
-        class="form-control"
-      />
-    </div>
 
-    <div class="form-group">
-      <label for="uploaded_images">Upload Images</label>
-      <input
-        type="text"
-        id="uploaded_images"
-        formControlName="uploaded_images"
-        class="form-control"
-      />
-    </div>
-    <div class="form-group">
-      <label for="tags">Tags</label>
-      <input
-        type="text"
-        id="tags"
-        formControlName="tags"
-        class="form-control"
-      />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1" required="required">Email address</label>
-      <input
-        type="email"
-        name="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-      />
-    </div>
     <div class="form-group">
       <label for="adTierSelect">Select Ad Tier</label>
       <select
@@ -134,11 +89,42 @@
         </option>
       </select>
     </div>
+    <div class="form-group">
+      <label for="price">Price(N)</label>
+      <input
+        type="number"
+        id="price"
+        placeholder="Price"
+        formControlName="price"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        id="description"
+        placeholder="Description of property"
+        formControlName="description"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <input
+        type="text"
+        id="tags"
+        formControlName="tags"
+        class="form-control"
+      />
+    </div>
+
     <hr />
     <div class="wrapper" formArrayName="uploaded_images">
       <div class="box" *ngFor="let control of controls; let i = index">
         <div class="btn-container">
-          <button (click)="removeImageControl(i)" *ngIf="control.value">
+          <button (click)="removeImageControl(i)">
             <span class="material-symbols-outlined"> close </span>
           </button>
         </div>
@@ -160,8 +146,8 @@
         </div>
       </div>
       <button type="button" class="upload-btn" (click)="addImageControl()">
-        Upload
-        <span class="material-symbols-outlined"> close </span>
+        <span>Add Image</span>
+        <span class="material-symbols-outlined"> add_circle </span>
       </button>
     </div>
     <hr />
