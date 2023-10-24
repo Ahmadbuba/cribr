@@ -4,6 +4,7 @@
   width: 95%;
   z-index: 100;
   @include center(0);
+  padding: 1.5rem 0;
   @include flexRowJustify(space-between);
 }
 

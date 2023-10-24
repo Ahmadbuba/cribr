@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" [ngStyle]="{ 'overflow-y': show ? 'scroll' : 'hidden' }">
   <ng-content select="[component]"></ng-content>
 </div>
 <!-- <div class="card" *ngFor="let property of data">

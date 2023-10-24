@@ -77,17 +77,10 @@
     </div>
 
     <div class="form-group">
-      <label for="adTierSelect">Select Ad Tier</label>
-      <select
-        class="form-control"
-        id="adTierSelect"
-        style="background-clip: padding-box"
-        formControlName="ad_tier"
-      >
-        <option *ngFor="let tier of getAdTierValues()" [value]="tier">
-          {{ tier }}
-        </option>
-      </select>
+      <div *ngFor="let tier of getAdTierValues()">
+        <label [htmlFor]="tier">{{ tier }}</label>
+        <input type="checkbox" [name]="tier" [id]="tier" [value]="tier" />
+      </div>
     </div>
     <div class="form-group">
       <label for="price">Price(N)</label>
@@ -121,34 +114,30 @@
     </div>
 
     <hr />
+
+    <!-- <button type="button" class="upload-btn" (click)="addImageControl()">
+      <span>Add Image</span>
+      <span class="material-symbols-outlined"> add_circle </span>
+    </button> -->
+    <input
+      type="file"
+      multiple
+      accept="image/*"
+      (change)="onImageChange($event)"
+    />
     <div class="wrapper" formArrayName="uploaded_images">
-      <div class="box" *ngFor="let control of controls; let i = index">
-        <div class="btn-container">
-          <button (click)="removeImageControl(i)">
+      <div class="box" *ngFor="let image of selectedImages; let i = index">
+        <div
+          class="js--image-preview"
+          [style.backgroundImage]="'url(' + image.url + ')'"
+          [ngClass]="{ 'hide-icon': image.url }"
+        ></div>
+        <div class="upload-options">
+          <button type="button" (click)="removeImage(i)">
             <span class="material-symbols-outlined"> close </span>
           </button>
         </div>
-        <div
-          class="js--image-preview"
-          [style.backgroundImage]="'url(' + control.value + ')'"
-          [ngClass]="{ 'hide-icon': control.value }"
-        ></div>
-        <div class="upload-options">
-          <label>
-            <input
-              type="file"
-              class="image-upload"
-              accept="image/*"
-              [formControlName]="i"
-              (change)="onImageChange($event, i)"
-            />
-          </label>
-        </div>
       </div>
-      <button type="button" class="upload-btn" (click)="addImageControl()">
-        <span>Add Image</span>
-        <span class="material-symbols-outlined"> add_circle </span>
-      </button>
     </div>
     <hr />
     <button type="submit" class="btn btn-primary">Submit</button>

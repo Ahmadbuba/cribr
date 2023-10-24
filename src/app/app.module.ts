@@ -36,6 +36,8 @@ import { DetailDescription1Component } from './shared/UI/details/detail-descript
 import { PropertyUploadComponent } from './pages/property/property-upload/property-upload.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 register();
 @NgModule({
@@ -69,12 +71,14 @@ register();
     DetailDescription1Component,
     PropertyUploadComponent,
     FooterComponent,
+    FooterNavComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxDropzoneModule,
     AppRoutingModule,
   ],
   providers: [],

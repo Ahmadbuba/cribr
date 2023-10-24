@@ -8,6 +8,7 @@ import { PropertiesService } from './properties.service';
   styleUrls: ['./properties.component.scss'],
 })
 export class PropertiesComponent {
+  show = false;
   defaultPage = 1;
 
   allProperties: Property[];

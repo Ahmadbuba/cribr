@@ -3,7 +3,8 @@
   z-index: 100;
   width: 80%;
   overflow-x: scroll;
-  @include center(1.8rem);
+  margin: 0 auto;
+  padding-bottom: 1.5rem;
   // display: flex;
   // align-items: center;
   // justify-content: center;
@@ -16,6 +17,5 @@
 @media (min-width: 745px) {
   .main {
     width: 50%;
-    @include center(2.5rem);
   }
 }

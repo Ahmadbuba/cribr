@@ -12,6 +12,11 @@ export enum AdTier {
   PLATINUM = 'Platinum',
 }
 
+interface Image {
+  file: File;
+  url: string;
+}
+
 interface UniversityListing {
   university: string;
   city: string;
@@ -33,6 +38,7 @@ interface UniversityListing {
   styleUrls: ['./property-upload.component.scss'],
 })
 export class PropertyUploadComponent implements OnInit {
+  selectedImages: Image[] = [];
   registrationForm: FormGroup;
 
   getAdTierValues(): string[] {
@@ -58,6 +64,15 @@ export class PropertyUploadComponent implements OnInit {
     });
   }
 
+  onUploadSuccess(event, index) {
+    const response = JSON.parse(event[1]);
+    const imageUrlArray: string[] = response.data.map((file) => file.url);
+
+    const controls = this.registrationForm.get('uploaded_images') as FormArray;
+    const control = new FormControl(imageUrlArray, Validators.required);
+    controls.setControl(index, control);
+  }
+
   addImageControl() {
     const control = new FormControl('', Validators.required);
     (<FormArray>this.registrationForm.get('uploaded_images')).push(control);
@@ -78,19 +93,56 @@ export class PropertyUploadComponent implements OnInit {
     return (this.registrationForm.get('uploaded_images') as FormArray).controls;
   }
 
-  onImageChange(event: Event, index: number) {
-    const file = (event.target as HTMLInputElement).files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const imageUrl = reader.result as string;
-        const controls = this.registrationForm.get(
-          'uploaded_images'
-        ) as FormArray;
-        controls.at(index).setValue(imageUrl);
-        console.log(imageUrl);
-      };
-      reader.readAsDataURL(file);
+  // onImageChange(event: Event, index: number) {
+  //   const file = (event.target as HTMLInputElement).files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = () => {
+  //       const imageUrl = reader.result as string;
+  //       const controls = this.registrationForm.get(
+  //         'uploaded_images'
+  //       ) as FormArray;
+  //       controls.at(index).setValue(imageUrl);
+  //       console.log(imageUrl);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // }
+
+  async onImageChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+
+    if (inputElement?.files) {
+      for (let i = 0; i < inputElement.files.length; i++) {
+        const file = inputElement.files[i];
+        const url = await this.convertToBase64(file).then((url: string) => {
+          this.selectedImages.push({ file, url });
+        });
+      }
     }
+    console.log('The length of images: ' + this.selectedImages.length);
+  }
+
+  convertToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+          console.log('Here it is:' + reader.result);
+        } else {
+          reject('Error reading file.');
+        }
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  removeImage(index: number): void {
+    if (index >= 0 && index < this.selectedImages.length) {
+      this.selectedImages.splice(index, 1); // Remove the image at the specified index
+    }
+    console.log(this.selectedImages.length);
   }
 }

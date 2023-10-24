@@ -6,6 +6,6 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
-  z-index: 150;
-  overflow: hidden;
+  z-index: 1000;
+  overflow-y: hidden;
 }
