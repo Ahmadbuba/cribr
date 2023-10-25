@@ -1,4 +1,41 @@
 <app-backdrop></app-backdrop>
 <app-modal>
-  <div class="flex" content></div>
+  <form class="form-container">
+    <h1>Search Filters</h1>
+    <!-- <h2>SignUp</h2> -->
+    <div class="item">
+      <label for="first_name"><b>First Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter first name"
+        name="first_name"
+        required
+      />
+    </div>
+    <div class="item">
+      <label for="last_name"><b>Last Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter Last name"
+        name="last_name"
+        required
+      />
+    </div>
+    <div class="item">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required />
+    </div>
+    <div class="item">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required />
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="btn">Apply</button>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="btn cancel">
+        <span class="material-symbols-outlined"> close </span>
+      </button>
+    </div>
+  </form>
 </app-modal>
