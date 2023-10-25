@@ -1,0 +1,64 @@
+<div class="form-popup" id="myForm">
+  <form class="form-container" *ngIf="show">
+    <a class="link" href="">
+      <img src="../../../assets/images/header/cribr.png" height="100" />
+    </a>
+    <!-- <h2>Login</h2> -->
+    <div class="item">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required />
+    </div>
+    <div class="item">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required />
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="btn">Login</button>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="btn cancel" (click)="onSwitch()">
+        Switch to SignUp
+      </button>
+    </div>
+  </form>
+  <form class="form-container" *ngIf="!show">
+    <a class="link" href="">
+      <img src="../../../assets/images/header/cribr.png" height="100" />
+    </a>
+    <!-- <h2>SignUp</h2> -->
+    <div class="item">
+      <label for="first_name"><b>First Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter first name"
+        name="first_name"
+        required
+      />
+    </div>
+    <div class="item">
+      <label for="last_name"><b>Last Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter Last name"
+        name="last_name"
+        required
+      />
+    </div>
+    <div class="item">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required />
+    </div>
+    <div class="item">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required />
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="btn">SignUp</button>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="btn cancel" (click)="onSwitch()">
+        Switch to Login
+      </button>
+    </div>
+  </form>
+</div>

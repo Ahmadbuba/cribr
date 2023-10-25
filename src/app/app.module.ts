@@ -38,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { LoginComponent } from './pages/login/login.component';
 
 register();
 @NgModule({
@@ -72,6 +73,7 @@ register();
     PropertyUploadComponent,
     FooterComponent,
     FooterNavComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

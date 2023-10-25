@@ -49,8 +49,9 @@
 .main {
   height: 85vh;
   overflow-x: hidden;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: scroll;
+  // -ms-overflow-style: none; /* IE and Edge */
+  // scrollbar-width: none; /* Firefox */
   width: 95%;
   margin: 0 auto;
   display: grid;

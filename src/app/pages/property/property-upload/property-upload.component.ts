@@ -58,7 +58,7 @@ export class PropertyUploadComponent implements OnInit {
       description: new FormControl(''),
       price: new FormControl(''),
       status: new FormControl(''),
-      ad_tier: new FormControl(''),
+      ad_tier: new FormGroup({}),
       uploaded_images: new FormArray([]),
       tags: new FormControl(''),
     });
