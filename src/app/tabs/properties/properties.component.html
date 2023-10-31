@@ -1,4 +1,7 @@
-<app-properties-filter></app-properties-filter>
+<app-properties-filter
+  (cancelEvent)="hideFilters()"
+  *ngIf="filter"
+></app-properties-filter>
 <app-wrapper>
   <app-card *ngFor="let property of allProperties" component>
     <app-carousel [images]="property.images" carousel></app-carousel>

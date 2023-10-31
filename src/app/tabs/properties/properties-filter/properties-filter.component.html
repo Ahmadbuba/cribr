@@ -1,41 +1,42 @@
 <app-backdrop></app-backdrop>
 <app-modal>
   <form class="form-container">
-    <h1>Search Filters</h1>
+    <button class="cnl-btn" type="button" (click)="onCancel()">
+      <span class="material-symbols-outlined"> cancel </span>
+    </button>
+
+    <h1>Filter</h1>
     <!-- <h2>SignUp</h2> -->
-    <div class="item">
-      <label for="first_name"><b>First Name</b></label>
-      <input
-        type="text"
-        placeholder="Enter first name"
-        name="first_name"
-        required
-      />
+    <div class="form-group">
+      <div class="item">
+        <label for="price_greater_than"><b>Price greater than</b></label>
+        <input type="number" name="price_greater_than" />
+      </div>
+      <div class="item">
+        <label for="price_less_than"><b>Price less than</b></label>
+        <input type="number" name="price_less_than" />
+      </div>
+      <div class="item">
+        <label for="last_name"><b>Date greater than</b></label>
+        <input type="date" name="date_greater_than" />
+      </div>
+      <div class="item">
+        <label for="date_less_than"><b>Date less than</b></label>
+        <input type="date" name="date_less_than" />
+      </div>
+      <div class="item">
+        <label for="search"><b>Search</b></label>
+        <input type="text" name="search" />
+      </div>
     </div>
-    <div class="item">
-      <label for="last_name"><b>Last Name</b></label>
-      <input
-        type="text"
-        placeholder="Enter Last name"
-        name="last_name"
-        required
-      />
-    </div>
-    <div class="item">
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required />
-    </div>
-    <div class="item">
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required />
-    </div>
+
     <div class="btn-container">
       <button type="submit" class="btn">Apply</button>
     </div>
-    <div class="btn-container">
+    <!-- <div class="btn-container">
       <button type="button" class="btn cancel">
         <span class="material-symbols-outlined"> close </span>
       </button>
-    </div>
+    </div> -->
   </form>
 </app-modal>

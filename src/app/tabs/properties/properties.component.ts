@@ -8,8 +8,17 @@ import { PropertiesService } from './properties.service';
   styleUrls: ['./properties.component.scss'],
 })
 export class PropertiesComponent {
+  filter = true;
   show = false;
   defaultPage = 1;
+
+  hideFilters() {
+    this.filter = false;
+  }
+
+  showFilters() {
+    this.filter = true;
+  }
 
   allProperties: Property[];
 

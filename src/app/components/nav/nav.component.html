@@ -1,3 +1,15 @@
 <div class="main">
-    <app-icons></app-icons>
+  <!-- <button (click)="scroll('left')" class="scroll-button">←</button> -->
+  <div class="sub-main">
+    <a
+      class="link"
+      *ngFor="let icon of iconNames; let first = first"
+      [class.active]="first"
+    >
+      <span class="material-symbols-outlined">{{ icon.name }}</span>
+      <span>{{ icon.description }}</span>
+    </a>
+  </div>
+
+  <!-- <button (click)="scroll('right')" class="scroll-button">→</button> -->
 </div>
