@@ -1,5 +1,4 @@
-<!-- <app-wrapper [data]="allProperties"></app-wrapper> -->
-<div class="container">
+<app-wrapper>
   <app-card *ngFor="let property of allProperties" component>
     <app-carousel [images]="property.images" carousel></app-carousel>
     <div class="card-content" cardcontent>
@@ -19,4 +18,5 @@
   </app-card>
 
   <app-footer></app-footer>
-</div>
+</app-wrapper>
+<app-footer-nav></app-footer-nav>

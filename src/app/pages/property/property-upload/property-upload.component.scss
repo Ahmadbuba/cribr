@@ -8,7 +8,9 @@ $base-font: "Raleway", sans-serif;
 .main {
   width: 95%;
   margin: 1rem auto;
-
+  font-family: "Onest", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
   //   col-md-6 offset-md-3 mt-5
 }
 
@@ -30,6 +32,12 @@ $base-font: "Raleway", sans-serif;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
   z-index: 100;
+}
+
+.submit-btn-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes rotation {
@@ -57,13 +65,15 @@ $base-font: "Raleway", sans-serif;
 
 .form {
   display: grid;
+  // gap: 0.5rem;
+  width: 100%;
 }
 
 .form-group {
   margin-bottom: 1rem; /* Adds margin at the bottom of the form group */
-  margin-right: 1rem;
-  margin-left: 1rem;
-  font-family: "Onest", sans-serif;
+  // margin-right: 1rem;
+  // margin-left: 1rem;
+
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -85,7 +95,7 @@ $base-font: "Raleway", sans-serif;
 
 .btn {
   display: inline-block;
-  width: 100%;
+  // width: 100%;
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
@@ -136,11 +146,12 @@ input::placeholder {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // align-items: center;
+  // justify-content: center;
 }
 
 h1 {
@@ -153,8 +164,17 @@ h1 {
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  width: 100%;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.boxes {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .box {
@@ -179,7 +199,8 @@ hr {
 .checkbox {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  overflow: hidden;
 }
 .tier {
   display: flex;
@@ -188,9 +209,16 @@ hr {
 }
 
 .custom-file-input {
-  opacity: 0;
-  position: absolute;
-  z-index: -1;
+  display: none;
+  // opacity: 0;
+  // position: absolute;
+  // z-index: -1;
+}
+
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-file-input-label {
@@ -200,8 +228,14 @@ hr {
   border-radius: 4px;
   background-color: #f1f1f1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  // display: block;
+  // display: flex;
+  // height: 50px;
+  // align-items: center;
+  // justify-content: center;
+  // flex-grow: 0;
 }
 
 .upload-options {
@@ -335,12 +369,10 @@ i.material-icons {
   }
 }
 
-@media (min-width: 1123px) {
-  .main {
-    width: 60%;
-  }
+@media (min-width: 750px) {
   .form {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
   .span-1 {
     grid-column: span 1;
@@ -348,6 +380,13 @@ i.material-icons {
   .span-2 {
     grid-column: span 2;
   }
+}
+
+@media (min-width: 1123px) {
+  .main {
+    width: 60%;
+  }
+
   // .form {
   //   grid-template-columns: repeat(2, 1fr);
 

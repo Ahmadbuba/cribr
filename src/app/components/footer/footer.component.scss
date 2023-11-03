@@ -10,36 +10,40 @@
   background-color: rgb(247, 247, 247);
   background-attachment: scroll;
   border-top: 1px solid rgb(241, 241, 241);
-  padding: 24px;
+
   width: 100%;
+  padding: 0;
+  margin: 0;
+  padding: 24px;
   margin-bottom: 1rem;
 
-  .sections {
-    margin: 0 auto;
-    display: grid;
-    .footer-section {
-      padding: 1rem 0;
-      text-size-adjust: 100%;
-      h3 {
-        margin-bottom: 12px;
+  // margin: 0 auto;
+  display: grid;
+  .footer-section {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    text-size-adjust: 100%;
+    h3 {
+      margin-bottom: 12px;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        padding-bottom: 12px;
       }
-      ul {
-        list-style-type: none;
-        li {
-          padding-bottom: 12px;
-        }
-      }
-      hr {
-        margin: 16px 0;
-      }
+    }
+    hr {
+      margin: 16px 0;
     }
   }
 }
 @media (min-width: 950px) {
   .footer {
     padding: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     .sections {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

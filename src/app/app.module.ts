@@ -39,6 +39,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FooterNavComponent } from './components/footer-nav/footer-nav.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { LoginComponent } from './pages/login/login.component';
+import { AdsComponent } from './pages/ads/ads.component';
+import { Header2Component } from './components/header2/header2.component';
 
 register();
 @NgModule({
@@ -74,6 +76,8 @@ register();
     FooterComponent,
     FooterNavComponent,
     LoginComponent,
+    AdsComponent,
+    Header2Component,
   ],
   imports: [
     BrowserModule,

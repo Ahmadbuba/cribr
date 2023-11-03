@@ -78,7 +78,7 @@
     </div>
 
     <div class="form-group span-2 checkbox">
-      <label for="" style="margin-right: 4px 0 4px 4px">Choose Ad Tier:</label>
+      <label for="">Ad Tier:</label>
       <div class="tier" *ngFor="let tier of getAdTierValues()">
         <label [htmlFor]="tier" style="margin-right: 1px">{{ tier }}</label>
         <input type="checkbox" [name]="tier" [id]="tier" [value]="tier" />
@@ -104,7 +104,7 @@
       />
     </div>
 
-    <div class="form-group">
+    <div class="form-group span-2">
       <label for="description">Description</label>
       <input
         type="text"
@@ -115,31 +115,36 @@
       />
     </div>
 
-    <hr />
+    <hr class="span-2" />
 
     <!-- <button type="button" class="upload-btn" (click)="addImageControl()">
       <span>Add Image</span>
       <span class="material-symbols-outlined"> add_circle </span>
     </button> -->
 
-    <div class="wrapper" formArrayName="uploaded_images">
-      <div class="box" *ngFor="let image of selectedImages; let i = index">
-        <div
-          class="js--image-preview"
-          [style.backgroundImage]="'url(' + image.url + ')'"
-          [ngClass]="{ 'hide-icon': image.url }"
-        ></div>
-        <div class="upload-options">
-          <button type="button" (click)="removeImage(i)">
-            <span class="material-symbols-outlined"> close </span>
-          </button>
+    <div class="wrapper span-2" formArrayName="uploaded_images">
+      <div class="boxes">
+        <div class="box" *ngFor="let image of selectedImages; let i = index">
+          <div
+            class="js--image-preview"
+            [style.backgroundImage]="'url(' + image.url + ')'"
+            [ngClass]="{ 'hide-icon': image.url }"
+          ></div>
+          <div class="upload-options">
+            <button type="button" (click)="removeImage(i)">
+              <span class="material-symbols-outlined"> close </span>
+            </button>
+          </div>
         </div>
       </div>
+      <div class="label-container">
+        <label for="images" class="custom-file-input-label"
+          ><span>Add Images</span>
+          <span class="material-symbols-outlined"> library_add </span>
+        </label>
+      </div>
     </div>
-    <label for="images" class="custom-file-input-label"
-      ><span>Add Images</span>
-      <span class="material-symbols-outlined"> library_add </span>
-    </label>
+
     <input
       type="file"
       multiple
@@ -148,8 +153,10 @@
       id="images"
       class="custom-file-input"
     />
-    <hr />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr class="span-2" />
+    <div class="submit-btn-ctn span-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
   </form>
 </div>
 <app-footer></app-footer>

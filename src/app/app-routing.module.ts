@@ -8,6 +8,7 @@ import { PropertyDetailComponent } from './tabs/properties/property-detail/prope
 import { TestComponent } from './test/test.component';
 import { PropertyUploadComponent } from './pages/property/property-upload/property-upload.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AdsComponent } from './pages/ads/ads.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'property-upload', component: PropertyUploadComponent },
   { path: 'test', component: TestComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'ads', component: AdsComponent },
 ];
 
 @NgModule({

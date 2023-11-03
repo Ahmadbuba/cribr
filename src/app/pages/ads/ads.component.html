@@ -1,0 +1,53 @@
+<app-header2></app-header2>
+
+<div class="nav">
+  <p>Wish List</p>
+  <div>Edit</div>
+</div>
+<div class="sub-nav">
+  <div style="font-weight: 700; text-decoration: underline">All items(13)</div>
+  <div>My lists(0)</div>
+</div>
+<div class="main">
+  <div class="navigations">
+    <div class="card" *ngFor="let image of allProperties[0].images">
+      <div class="container">
+        <div class="img-container"><img [src]="image.image" /></div>
+        <div class="info">
+          <h3>Easy Super Slim Zuba Housing Estate</h3>
+          <h4>300+ reviews</h4>
+          <p>NGN4,920.12</p>
+          <div class="btm-items">
+            <button class="btn">Move to cart</button>
+            <div>
+              <svg
+                viewBox="0 0 1024 1024"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                aria-hidden="false"
+                focusable="false"
+              >
+                <path
+                  d="M576 192a64 64 0 1 1-128 0 64 64 0 0 1 128 0z m0 320a64 64 0 1 1-128 0 64 64 0 0 1 128 0z m0 320a64 64 0 1 1-128 0 64 64 0 0 1 128 0z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          height: 0.1px;
+          opacity: 0.4;
+          margin: 1rem 0;
+          width: 100%;
+          background-color: rgb(113, 113, 113);
+        "
+      ></div>
+    </div>
+  </div>
+  <div class="ads"></div>
+</div>
+<div class="footer-pop"></div>
+<app-backdrop></app-backdrop>
